@@ -1,0 +1,4 @@
+inside mysql workbench:
+
+use testdb # execute and delete
+select * from students #shows all data in table
