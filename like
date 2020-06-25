@@ -1,0 +1,13 @@
+1
+sql = "SELECT * FROM students WHERE name LIKE 'B%'" # after
+
+2
+sql = "SELECT * FROM students WHERE name LIKE '%b'" # before
+
+3
+sql = "SELECT * FROM students WHERE name LIKE '%b%'"
+
+# query with property space holders:
+
+sql = "SELECT * FROM students WHERE name = %s"
+mycursor.execute(sql, ("Jacob",))
