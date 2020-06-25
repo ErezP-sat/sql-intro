@@ -1,0 +1,25 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Sql841752!",
+    database="testdb"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("select age from students") # select *
+
+myresult1 = mycursor.fetchall()
+for st in myresult1:
+    print(st)
+
+mycursor.execute("select age from students")
+myresult2 = mycursor.fetchone()
+for rt in myresult2:
+    print(rt)
+#print(myresult2)
+
+# save all changes:
+# mydb.commit()
