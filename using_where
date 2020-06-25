@@ -1,0 +1,19 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Sql841752!",
+    database="testdb"
+)
+
+mycursor = mydb.cursor()
+
+sql = "SELECT * FROM students WHERE age = 21"
+sql = "SELECT * FROM students WHERE name = 'Bob'"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+for res in myresult:
+    print(res)
