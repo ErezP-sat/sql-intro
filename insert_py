@@ -1,0 +1,18 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Sql841752!",
+    database="testdb"
+)
+
+mycursor = mydb.cursor()
+
+sqlFormula = "INSERT INTO students (name, age) VALUES (%s, %s)"
+student1 = ("Rachel", 21)
+
+mycursor.execute(sqlFormula, student1)
+
+#save all changes:
+mydb.commit()
