@@ -1,0 +1,16 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Sql841752!",
+    database="testdb"
+)
+
+mycursor = mydb.cursor()
+
+sql = "DELETE FROM students WHERE name = 'Rachel'" 
+sqlDeleteTable = "DROP TABLE IF EXISTS students"
+
+mycursor.execute(sql)
+mydb.commit()
