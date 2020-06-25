@@ -1,0 +1,10 @@
+
+sqlFormula = "INSERT INTO students (name, age) VALUES (%s, %s)"
+students = [("Rachel", 21),
+            ("Bob", 25),
+            ("Amanda", 12),
+            ("Jacob", 35),
+            ("Michelle", 45)]
+
+
+mycursor.executemany(sqlFormula, students)
