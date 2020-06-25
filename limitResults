@@ -1,0 +1,17 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Sql841752!",
+    database="testdb"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM students LIMIT 2 OFFSET 2") # zero based
+
+myres = mycursor.fetchall()
+
+for res in myres:
+    print(res)
