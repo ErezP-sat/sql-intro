@@ -1,0 +1,17 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Sql841752!",
+    database="testdb"
+)
+
+mycursor = mydb.cursor()
+
+sql = "SELECT * FROM students ORDER BY name DESC" # default ascending
+mycursor.execute(sql)
+res = mycursor.fetchall()
+for r in res:
+    print(r)
+
